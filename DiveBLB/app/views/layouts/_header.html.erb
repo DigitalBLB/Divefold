@@ -1,0 +1,26 @@
+<!-- Header section -->
+  <header class="navbar navbar-fixed-top navbar-inverse">
+      <div class="container">
+        
+        <nav>
+        <!-- old <%= link_to "Dive Fold", root_path, id: "logo" %> -->
+        <%= link_to image_tag("DiveFold-200.png", alt: "Dive Fold logo"), root_path, id: "logo" %>
+        <ul class="nav navbar-nav navbar-right"> 
+          <li><%= link_to "Home", root_path %></li>
+          
+          <% if host_signed_in? %>
+          
+          <li><%= link_to "Host Sign Out", destroy_host_session_path, method: :delete %></li>
+          
+          <% else %>
+          
+          <li><%= link_to "Become A Host", new_host_registration_path %></li>
+          <li><%= link_to "Host Login", new_host_session_path %></li>
+          
+          <% end %>
+          
+        </ul> 
+        </nav>
+      </div>
+    </header>
+  <div class="container">
